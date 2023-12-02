@@ -163,7 +163,8 @@
 
         function calculateBidCount(currentPrice, minPrice, MIN_BID_COUNT, MAX_BID_COUNT) {
             const heatFactor = calculateHeatFactor(currentPrice, minPrice);
-            let bidCount = Math.round(MIN_BID_COUNT + (heatFactor - 1) * (MAX_BID_COUNT - MIN_BID_COUNT));
+            const nonlinearFactor = Math.sqrt(heatFactor - 1); // 引入非线性因子
+            let bidCount = Math.round(MIN_BID_COUNT + nonlinearFactor * (MAX_BID_COUNT - MIN_BID_COUNT));
             return Math.min(Math.max(bidCount, MIN_BID_COUNT), MAX_BID_COUNT);
         }
 
