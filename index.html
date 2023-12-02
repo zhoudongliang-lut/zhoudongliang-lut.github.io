@@ -95,11 +95,11 @@
         <!-- 表单输入区 -->
         <div class="form-group">
             <!-- 输入字段 -->
-            <label>ALPHA: <input type="number" id="alpha" step="0.1" value="0.2"></label>
-            <label>BETA: <input type="number" id="beta" step="0.1" value="0.15"></label>
+            <label title="ALPHA 较大时，商品热度对出价下限的影响更显著，也就是热门商品的模拟出价下限更高,当 ALPHA 较小或为零时，商品热度对出价下限的影响减小或不存在，模拟出价更趋近于起拍价">ALPHA: <input type="number" id="alpha" step="0.1" value="0.2"></label>
+            <label title="BETA 决定了生成正态分布出价的标准差，即出价的波动范围, BETA 值增大时，模拟出价更分散,BETA 值减小时, 出价更集中，主要集中在中间值附近">BETA: <input type="number" id="beta" step="0.1" value="0.15"></label>
+            <label title="值越大计算出的出价次数会更平缓，也就是出价次数会越少">出价次数幅度控制: <input type="number" id="base" step="1" value="10"></label>
             <label>最小出价次数: <input type="number" id="minBidCount" value="1"></label>
             <label>最大出价次数: <input type="number" id="maxBidCount" value="30"></label>
-            <label>出价次数控制（对数函数的底数）: <input type="number" id="base" step="1" value="1.5"></label>
             <label>起拍价: <input type="number" id="startPrice" step="10" value="100"></label>
             <label>当前最高出价: <input type="number" id="currentPrice" step="10" value="180"></label>
             <label>最低评估价: <input type="number" id="minPrice" step="10" value="80"></label>
